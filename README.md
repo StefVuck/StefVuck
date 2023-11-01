@@ -12,7 +12,7 @@ This is also a good place to see what I'm working on, and what I'm learning.
  - MatLab: Intermediate
  - JavaScript: Intermediate
  - SQL: Intermediate
- - C : Beginner
+ - C : Intermediate
  - Rust : Beginner
 
 ### Technologies Used:
@@ -23,6 +23,8 @@ This is also a good place to see what I'm working on, and what I'm learning.
 - C#:
   - Unity
 - JavaScript:
+  - React-Native
+  - React 
   - jQuery
   - Bootstrap
 - MatLab:
