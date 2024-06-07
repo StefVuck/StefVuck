@@ -30,24 +30,19 @@ This is also a good place to see what I'm working on, and what I'm learning.
 - C++:
   - STM32/mbed/Arduino embedded programming 
 - Typescript:
- - React
- - React-Native
- - three.js
-- Java:
- - Springboot
- - Maven
-- YAML for DevOps
- - Gitlab Pipelines
- - Jenkins
- - Azure Devops Pipelines
-- Go:
- - Bubbletea
- - Lipgloss  
-- JavaScript:
+  - React
   - React-Native
-  - React 
-  - jQuery
-  - Bootstrap
+  - three.js
+- Java:
+  - Springboot
+  - Maven
+- YAML for DevOps
+  - Gitlab Pipelines
+  - Jenkins
+  - Azure Devops Pipelines
+- Go:
+  - Bubbletea
+  - Lipgloss
 - MatLab:
   - SimuLink
 - C#:
