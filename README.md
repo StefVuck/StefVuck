@@ -64,7 +64,7 @@ Outside of my syllabus here is what I'm currently working on, I intend to try ke
 Bilingual in English/Serbian, and intermediate (B2) German.
 
 ```math
-\ce{$\unicode[goombafont; color:blue; pointer-events: none; z-index: -5; position: fixed; top: 10px; left: 10px; height: 100vh; object-fit: cover; background-size: contain; width: 100vw; opacity: 0.8; background: url('https://github.com/StefVuck/StefVuck/assets/142335830/f73b2b08-91af-4d4a-b109-9ce724a3e5d4');]{x0000}$}
+\ce{$\unicode[goombafont; color:blue; pointer-events: none; z-index: -5; position: fixed; top: 10px; left: 10px; height: 100vh; object-fit: cover; background-size: contain; width: 100vw; opacity: 0.8; background: url('https://github.com/StefVuck/StefVuck/assets/142335830/33bd96a0-6299-481e-92d6-7c98a302b38d');]{x0000}$}
 
 
 
