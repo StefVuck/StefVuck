@@ -23,7 +23,7 @@ SSH Access to CV in the Terminal: `ssh CV@stefvuck.dev`
 	•	TypeScript/JavaScript: React, React-Native, three.js, Plotly, Dash
 	•	Java: Springboot, Maven
 	•	YAML for DevOps: GitLab Pipelines, Jenkins, Azure DevOps Pipelines
-	•	Go: Bubbletea, Lipgloss
+	•	Go: Gin, Bubbletea, Lipgloss
 	•	MATLAB: Simulink
 	•	C#: Unity
 	•	Bash/Powershell: Custom CI/CD Scripts
