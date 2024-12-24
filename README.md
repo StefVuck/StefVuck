@@ -1,70 +1,52 @@
-# Stefan Vučković's GitHub
-Hello, welcome to my github, this is exclusively hobby related projects, as neither University or Employment based work can be hosted publically here. I am willing to discuss other projects, as far as I am legally allowed to through my LinkedIn.
+Hello, welcome to my GitHub! This space showcases my hobby-related projects. Work completed for university or employment remains private. However, I am happy to discuss those projects, within the bounds of legal allowances, via my LinkedIn.
 
-My primary interests lie between low-level embedded programming, and machine learning technologies.
-Neovim enjoyer.
-Also dabble with basic cyber-security, as you can tell with my "background image" 
+My primary interests lie in low-level embedded programming and machine learning technologies, but I also frequently create Fullstack Applications with Gin/Flask and React
+
+***Feel free to explore my repositories and connect!***
 
 ### Socials:
- [LinkedIn](https://www.linkedin.com/in/stefan-vu%C4%8Dkovi%C4%87-b63952286/)! 
 
-This is also a good place to see what I'm working on, and what I'm learning.
-### Programming Languages:
- - Python : Proficient
- - C++ : Proficient 
- - JavaScript/Typescript: Proficient
- - C : High Intermediate
- - Java : High Intermediate
- - YAML for DevOps : Intermediate
- - SQL : Intermediate
- - MatLab : Low Intermediate
- - C# : Low Intermediate
- - Go : Low Intermediate
- - Rust : Beginner
+[LinkedIn](https://www.linkedin.com/in/stefan-vučković-b63952286/)
 
-### Technologies Used:
-- Python:
-  - Django
-  - PyTorch
-  - requests (REST API calling)
-- C++:
-  - STM32/mbed/Arduino embedded programming 
-- Typescript:
-  - React
-  - React-Native
-  - three.js
-- Java:
-  - Springboot
-  - Maven
-- YAML for DevOps
-  - Gitlab Pipelines
-  - Jenkins
-  - Azure Devops Pipelines
-- Go:
-  - Bubbletea
-  - Lipgloss
-- MatLab:
-  - SimuLink
-- C#:
-  - Unity
+SSH Access to CV in the Terminal: `ssh CV@stefvuck.dev`
 
-### Personal Projects:
-Outside of my syllabus here is what I'm currently working on, I intend to try keep this up to date.
-- Learning Rust
-- Creating a CV in a web-like interface in the terminal (TUI) in golang
-- Development of an IoT connected telemetry device for the tranmission of car data mid-race
-- Development of a low level screen interface to display data from a CAN bus on a programmable LCD screen. 
+ ### Programming Languages:
+	•	Proficient: Python, C++, JavaScript/TypeScript
+	•	High Intermediate: C, Java, Powershell, Bash
+	•	Intermediate: YAML (DevOps), SQL,  Golang
+	•	Low Intermediate: MATLAB, C#, 
+	•	Beginner: Rust
 
-### Additional Information:
-Bilingual in English/Serbian, and intermediate (B2) German.
+ ### Technologies Used:
+	•	Python: Django, PyTorch, requests (REST API), CUDA
+	•	C++: STM32/mbed/Arduino for embedded programming
+	•	TypeScript/JavaScript: React, React-Native, three.js, Plotly, Dash
+	•	Java: Springboot, Maven
+	•	YAML for DevOps: GitLab Pipelines, Jenkins, Azure DevOps Pipelines
+	•	Go: Bubbletea, Lipgloss
+	•	MATLAB: Simulink
+	•	C#: Unity
+	•	Bash/Powershell: Custom CI/CD Scripts
 
-```math
-\ce{$\unicode[goombafont; color:blue; pointer-events: none; z-index: -5; position: fixed; top: 10px; left: 10px; height: 100vh; object-fit: cover; background-size: contain; width: 100vw; opacity: 0.8; background: url('https://github.com/StefVuck/StefVuck/assets/142335830/33bd96a0-6299-481e-92d6-7c98a302b38d');]{x0000}$}
+ ## Personal Projects:
+1.	[Forum for Glasgow University Drone Society](https://github.com/StefVuck/GUDForum)
+    - Full Stack Application using Golang, Gin and Postgres on the Backend and React, TS + Tailwind on the Frontend
+2.	[Terminal CV TUI](https://github.com/StefVuck/CVinTUI):
+    - Created a CV-like interface in the terminal, deployed on AWS Lightsail.
+  	 - Secure and optimized for low resource usage.
+3.	IoT Telemetry System:
+    - Real-time transmission of car data using Embedded LTE and cloud services.
+4.	Low-Level CAN Display System:
+    - Programming an LCD to display data from a CAN bus.
+5.	[Mobile Rhythm Game](https://github.com/JazzyMaxine/DYHTG2024T01):
+    - Developed for the DYHTG Annual Hackathon, Built with React Native and DSP for dynamic beatmap generation.
 
+## Experience:
 
+Software Engineering Intern – Integrated Environmental Solutions Inc
+- Core Simulation Team (2024 – Present)
 
+Electronic Engineer – UGRacing, Formula Student Team
 
-
-
-
+Freelance Software Engineer – Vectofy (Orange Matter Ltd) (2023 – 2024)
 
