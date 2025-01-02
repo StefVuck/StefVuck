@@ -15,7 +15,7 @@ SSH Access to CV in the Terminal: `ssh CV@stefvuck.dev`
 	•	High Intermediate: C, Java, Powershell, Bash
 	•	Intermediate: YAML (DevOps), SQL,  Golang
 	•	Low Intermediate: MATLAB, C#, 
-	•	Beginner: Rust
+	•	Beginner: Rust, Elixir
 
  ### Technologies Used:
 	•	Python: Django, PyTorch, requests (REST API), CUDA
@@ -27,6 +27,8 @@ SSH Access to CV in the Terminal: `ssh CV@stefvuck.dev`
 	•	MATLAB: Simulink
 	•	C#: Unity
 	•	Bash/Powershell: Custom CI/CD Scripts
+ 	•	Elixir: Pheonix
+ 
 
  ## Personal Projects:
 1.	[Forum for Glasgow University Drone Society](https://github.com/StefVuck/GUDForum)
