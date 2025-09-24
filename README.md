@@ -47,6 +47,7 @@ Experience spans embedded systems, distributed computing, real-time applications
 
 **Low Intermediate:**
 
+![Haskell](https://img.shields.io/badge/-Haskell-5D4F85?style=for-the-badge&logo=haskell&logoColor=white)
 ![MATLAB](https://img.shields.io/badge/MATLAB-0076A8?style=for-the-badge&logo=mathworks&logoColor=white)
 ![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)
 
@@ -109,6 +110,8 @@ Experience spans embedded systems, distributed computing, real-time applications
 ![GitLab](https://img.shields.io/badge/GitLab-330F63?style=for-the-badge&logo=gitlab&logoColor=white)
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=Postman&logoColor=white)
 
+
+![Stats](https://github-readme-stats.vercel.app/api/top-langs/?username=stefvuck&layout=donut&size_weight=0&count_weight=1)
 ---
 
 ## Experience
