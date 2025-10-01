@@ -21,6 +21,7 @@ Currently focused on servo controller optimization and software-in-loop verifica
 Experience spans embedded systems, distributed computing, real-time applications, and full-stack development.
 
 [Porfolio Website](https://stefvuck.dev)
+[Infrequent Blog Posts](https://stefvuck.dev/blog)
 
 ---
 
@@ -51,12 +52,15 @@ Experience spans embedded systems, distributed computing, real-time applications
 
 ![Haskell](https://img.shields.io/badge/-Haskell-5D4F85?style=for-the-badge&logo=haskell&logoColor=white)
 ![MATLAB](https://img.shields.io/badge/MATLAB-0076A8?style=for-the-badge&logo=mathworks&logoColor=white)
+![MIPS Assembly](https://img.shields.io/badge/MIPS%20Assembly-00427E?style=for-the-badge&logo=assemblyscript&logoColor=white)
 ![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)
 
 **Learning:**
 
 ![Rust](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)
 ![Elixir](https://img.shields.io/badge/Elixir-4B275F?style=for-the-badge&logo=elixir&logoColor=white)
+![x86 Assembly](https://img.shields.io/badge/x86%20Assembly-0071C5?style=for-the-badge&logo=intel&logoColor=white)
+![ARM Assembly](https://img.shields.io/badge/ARM%20Assembly-0091BD?style=for-the-badge&logo=arm&logoColor=white)
 
 ## Technologies & Frameworks
 
