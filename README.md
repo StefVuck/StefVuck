@@ -126,7 +126,7 @@ Experience spans embedded systems, distributed computing, real-time applications
 ![DigitalOcean](https://img.shields.io/badge/DigitalOcean-0080FF?style=for-the-badge&logo=digitalocean&logoColor=white)
 
 
-![Stats](https://github-readme-stats.vercel.app/api/top-langs/?username=stefvuck&layout=donut&size_weight=0&count_weight=1)
+![Stats](https://github-readme-stats.vercel.app/api/top-langs/?username=stefvuck&layout=compact&size_weight=0&count_weight=1&hide=html,css&exclude_repo=interactivesolarsystem,testaichat)
 ---
 
 ## Experience
