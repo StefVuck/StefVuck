@@ -14,6 +14,9 @@
 ---
 ***Contact stefan@stefvuck.dev for a proper PDF CV***
 
+![snake](https://github.com/StefVuck/Stefvuck/blob/output/github-contribution-grid-snake.svg)
+---
+
 ## About
 
 Embedded software engineer specializing in performance optimization and low-level systems programming. 
@@ -143,6 +146,7 @@ Experience spans embedded systems, distributed computing, real-time applications
 **Additional Roles:** Software Developer (3 positions), Assistant Demonstrator - University of Glasgow
 
 ---
+
 
 ## Personal Projects
 
