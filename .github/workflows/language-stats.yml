@@ -1,0 +1,27 @@
+  name: Update Language Statistics
+
+  on:
+    schedule:
+      - cron: '0 0 * * *'  # Daily at midnight UTC
+    workflow_dispatch:  # Manual trigger
+    push:
+      branches: [main]
+
+  permissions:
+    contents: write
+
+  jobs:
+    update-stats:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+
+        - name: Generate Language Statistics
+          uses: StefVuck/Github-Language-Stats@V1.0
+          with:
+            visualization_types: 'leaderboard'
+            output_path: 'stats'
+            exclude_languages: 'HTML,CSS,Jupyter Notebook,Mermaid,Astro'
+            top_repos_count: '5'
+            commit_message: 'Update language statistics [skip ci]'
