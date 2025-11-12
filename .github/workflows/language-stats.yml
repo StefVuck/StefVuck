@@ -25,4 +25,5 @@
             output_path: 'stats'
             exclude_languages: 'HTML,CSS,Jupyter Notebook,Mermaid,Astro'
             top_repos_count: '5'
+            dark_mode: "true"
             commit_message: 'Update language statistics [skip ci]'
