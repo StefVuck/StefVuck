@@ -21,8 +21,8 @@
           uses: StefVuck/Github-Language-Stats@V1.0
           with:
             visualization_types: 'leaderboard'
-            github_token: ${{ secrets.LANGUAGE_STATS_TOKEN }}  # Use your PAT here
+            github_token: ${{ secrets.LANGUAGE_STATS_TOKEN }}  
             output_path: 'stats'
             exclude_languages: 'HTML,CSS,Jupyter Notebook,Mermaid,Astro'
-            top_repos_count: '10'
+            top_repos_count: '5'
             commit_message: 'Update language statistics [skip ci]'
