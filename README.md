@@ -128,8 +128,10 @@ Experience spans embedded systems, distributed computing, real-time applications
 ![Microsoft Azure](https://img.shields.io/badge/Azure-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white)
 ![DigitalOcean](https://img.shields.io/badge/DigitalOcean-0080FF?style=for-the-badge&logo=digitalocean&logoColor=white)
 
-
-![Stats](https://github-readme-stats.vercel.app/api/top-langs/?username=stefvuck&layout=compact&size_weight=0&count_weight=1&hide=html,css&exclude_repo=interactivesolarsystem,testaichat)
+## Most Used Languages
+![Better Stats](stats/leaderboard_by_lines.png)
+Want to use this yourself?
+[Try for free with Github Marketplace](https://github.com/marketplace/actions/github-profile-language-analytics)
 ---
 
 ## Experience
