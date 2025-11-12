@@ -18,7 +18,7 @@
           uses: actions/checkout@v4
 
         - name: Generate Language Statistics
-          uses: StefVuck/Github-Language-Stats@V1.1.0
+          uses: StefVuck/Github-Language-Stats@v1.1.0
           with:
             visualization_types: 'leaderboard'
             github_token: ${{ secrets.LANGUAGE_STATS_TOKEN }}  
