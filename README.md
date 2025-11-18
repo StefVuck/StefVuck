@@ -13,7 +13,7 @@
 </div>
 
 ---
-***Contact stefan@stefvuck.dev for a proper PDF CV***
+Paper CV at: [https://cv.stefvuck.dev](https://cv.stefvuck.dev)
 
 ![snake](https://github.com/StefVuck/Stefvuck/blob/output/github-contribution-grid-snake.svg)
 ---
