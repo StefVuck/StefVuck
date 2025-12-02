@@ -24,7 +24,7 @@ Currently focused on servo controller optimization and software-in-loop verifica
 Experience spans embedded systems, distributed computing, real-time applications, and full-stack development.
 
 [Porfolio Website](https://stefvuck.dev)
-[Infrequent Blog Posts](https://stefvuck.dev/blog)
+[Infrequent Blog Posts](https://stefvuck.dev/blog) (More on COBOL and NixOS later this week!)
 
 ---
 
