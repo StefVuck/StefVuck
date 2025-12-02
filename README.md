@@ -15,7 +15,6 @@
 ---
 Paper CV at: [https://cv.stefvuck.dev](https://cv.stefvuck.dev)
 
-![snake](https://github.com/StefVuck/Stefvuck/blob/output/github-contribution-grid-snake.svg)
 ---
 
 ## About
@@ -207,6 +206,9 @@ Want to use this yourself?
 **DevOps:** CI/CD pipeline design, automated testing, deployment optimization  
 
 ---
+
+
+![snake](https://github.com/StefVuck/Stefvuck/blob/output/github-contribution-grid-snake.svg)
 
 <div align="center">
 
