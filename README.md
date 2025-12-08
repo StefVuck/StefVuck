@@ -19,8 +19,9 @@ Paper CV at: [https://cv.stefvuck.dev](https://cv.stefvuck.dev)
 
 ## About
 
-Embedded software engineer specializing in performance optimization and low-level systems programming. 
-Currently focused on servo controller optimization and software-in-loop verification for constrained microcontrollers at Thales UK.
+Embedded software engineer specializing in performance optimization and low-level systems programming.
+
+Currently working on Master's Project on Low-level Optimisation for Microcontrollers
 Experience spans embedded systems, distributed computing, real-time applications, and full-stack development.
 
 [Porfolio Website](https://stefvuck.dev)
@@ -134,23 +135,7 @@ Want to use this yourself?
 [Try for free with Github Marketplace](https://github.com/marketplace/actions/github-profile-language-analytics)
 ---
 
-## Experience
-
-**Embedded Software Engineer** – Thales UK (Jun 2025 – Dec 2025)
-- Master's Project: Optimization of Servo Controllers and Software-In-Loop on Constrained Microcontrollers
-
-**Software Engineering Intern** – Integrated Environmental Solutions Inc (Jun 2024 – Jun 2025)
-- Core Simulation Team DevOps Architect, improving build processes and testing infrastructure
-
-**Freelance Software Engineer** – Vectofy (Orange Matter Ltd) (Oct 2023 – Mar 2024)
-- System Architect and team lead for finance industry automation tools
-
-**Additional Roles:** Software Developer (3 positions), Assistant Demonstrator - University of Glasgow
-
----
-
-
-## Personal Projects
+## Projects
 
 ### [Forum for Glasgow University Drone Society](https://github.com/StefVuck/GUDForum)
 
@@ -167,7 +152,7 @@ Want to use this yourself?
 ### [Mobile Rhythm Game](https://github.com/JazzyMaxine/DYHTG2024T01)
 
 *React Native | Digital Signal Processing*
-- DYHTG 2024 Hackathon winner with dynamic beatmap generation
+- DYHTG 2024 Hackathon contestant with dynamic beatmap generation
 - Real-time audio processing for responsive gameplay
 
 ### Drone Swarm Simulation Software
@@ -185,25 +170,6 @@ Want to use this yourself?
 
 *C | CAN Protocol | LCD Programming*
 - Direct hardware programming for CAN bus data visualization on LCD displays
-
----
-
-## Recognition
-
-**DYHTG Glasgow University Hackathon Winner (2022)** | Honourable Mention (2023)  
-**Formula Student UK Concept Overall Winner** | Team Member (2024)  
-**British Team Maths Challenge National Finalist** (2020)  
-**Arkwright Engineering Scholarship Recipient** (2021)  
-**Engineering Excellence List** (2024, 2025)
-
----
-
-## Technical Expertise
-
-**Embedded Systems:** Real-time programming, hardware abstraction, performance optimization  
-**System Architecture:** Distributed systems design, microservices, scalable infrastructure  
-**Performance Engineering:** Algorithm optimization, memory management, profiling and benchmarking  
-**DevOps:** CI/CD pipeline design, automated testing, deployment optimization  
 
 ---
 
