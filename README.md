@@ -8,7 +8,7 @@
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:stefan@stefvuck.dev)
 
 **Final Year MEng Electronics & Software Engineering | Glasgow University**  
-**Embedded Software Engineering Intern | Thales UK**
+**Incoming Software Developer @ Squarepoint Capital**
 
 </div>
 
@@ -21,11 +21,11 @@ Paper CV at: [https://cv.stefvuck.dev](https://cv.stefvuck.dev)
 
 Embedded software engineer specializing in performance optimization and low-level systems programming.
 
-Currently working on Master's Project on Low-level Optimisation for Microcontrollers
+Recently completed Master's Project on Low-level Optimisation for Microcontrollers
 Experience spans embedded systems, distributed computing, real-time applications, and full-stack development.
 
 [Porfolio Website](https://stefvuck.dev)
-[Infrequent Blog Posts](https://stefvuck.dev/blog) (More on COBOL and NixOS later this week!)
+[Infrequent Blog Posts](https://stefvuck.dev/blog) 
 
 ---
 
