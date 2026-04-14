@@ -130,7 +130,7 @@ Experience spans embedded systems, distributed computing, real-time applications
 ![DigitalOcean](https://img.shields.io/badge/DigitalOcean-0080FF?style=for-the-badge&logo=digitalocean&logoColor=white)
 
 ## Most Used Languages
-![Better Stats](stats/leaderboard_by_bytes.png)
+![Better Stats](stats/leaderboard_by_lines.png)
 Want to use this yourself?
 [Try for free with Github Marketplace](https://github.com/marketplace/actions/github-profile-language-analytics)
 ---
