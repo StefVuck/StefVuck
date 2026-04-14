@@ -23,7 +23,7 @@
             visualization_types: 'leaderboard'
             github_token: ${{ secrets.LANGUAGE_STATS_TOKEN }}  
             output_path: 'stats'
-            exclude_languages: 'HTML,CSS,Jupyter Notebook,Mermaid,Astro,Markdown,JSON'
+            exclude_languages: 'HTML,CSS,Jupyter Notebook,Mermaid,Astro,Markdown,JSON,Javascript'
             top_repos_count: '5'
             dark_mode: "true"
             commit_message: 'Update language statistics [skip ci]'
