@@ -1,10 +1,14 @@
 #!/usr/bin/env python3
-"""Regenerate the ASCII portrait / neofetch banner and text leaderboard in
-README.md from live data, so the profile README stays reproducible instead
+"""Regenerate the ASCII-portrait banner and language leaderboard as SVGs and
+wire them into README.md, so the profile README stays reproducible instead
 of being a hand-edited static blob.
 
-Run via `.github/workflows/update-profile-banner.yml` after the
-Github-Language-Stats action refreshes stats/*.txt, or manually with:
+SVG (not a plain-text code block) is what gives these real color and lets
+GitHub scale them to fit the README column instead of horizontal-scrolling
+a wide <pre> block.
+
+Run via .github/workflows/update-profile-banner.yml after the
+Github-Language-Stats action refreshes stats/*.json, or manually with:
     python scripts/render_banner.py
 """
 import json
@@ -18,11 +22,15 @@ from urllib.error import URLError
 
 sys.path.insert(0, str(Path(__file__).parent))
 from ascii_face import build_ascii
+import svg_banner
+import svg_leaderboard
 
 ROOT = Path(__file__).parent.parent
 README_PATH = ROOT / "README.md"
 FACE_SOURCE = ROOT / "assets" / "ascii_face_source.png"
-LEADERBOARD_TXT = ROOT / "stats" / "leaderboard_by_lines.txt"
+LEADERBOARD_JSON = ROOT / "stats" / "leaderboard_by_lines.json"
+LANGUAGE_COLORS_PATH = Path(__file__).parent / "language_colors.json"
+ASSETS_DIR = ROOT / "assets"
 USERNAME = "StefVuck"
 
 BANNER_START, BANNER_END = "<!--ASCII-BANNER:START-->", "<!--ASCII-BANNER:END-->"
@@ -37,6 +45,32 @@ FALLBACK_PROFILE = {
     "public_gists": 4,
     "created_at": "2023-08-15T16:20:05Z",
 }
+
+FALLBACK_LEADERBOARD = [
+    {"language": "TypeScript", "value": 35600, "color": "#2b7489"},
+    {"language": "Python", "value": 18300, "color": "#3572A5"},
+    {"language": "Swift", "value": 13200, "color": "#ffac45"},
+    {"language": "Lua", "value": 4300, "color": "#000080"},
+    {"language": "Elixir", "value": 3600, "color": "#6e4a7e"},
+    {"language": "Go", "value": 3300, "color": "#00ADD8"},
+    {"language": "CUDA", "value": 2500, "color": "#888888"},
+    {"language": "Nix", "value": 2300, "color": "#7e7eff"},
+    {"language": "C++", "value": 1900, "color": "#f34b7d"},
+    {"language": "Zig", "value": 1500, "color": "#ec915c"},
+    {"language": "Shell", "value": 1500, "color": "#89e051"},
+    {"language": "Haskell", "value": 988, "color": "#5e5086"},
+    {"language": "C", "value": 683, "color": "#555555"},
+    {"language": "Rust", "value": 548, "color": "#dea584"},
+    {"language": "COBOL", "value": 367, "color": "#555555"},
+    {"language": "Arduino", "value": 299, "color": "#bd79d1"},
+    {"language": "Assembly", "value": 287, "color": "#6E4C13"},
+    {"language": "PowerShell", "value": 287, "color": "#012456"},
+    {"language": "SQL", "value": 275, "color": "#e38c00"},
+    {"language": "Dockerfile", "value": 171, "color": "#384d54"},
+    {"language": "CMake", "value": 81, "color": "#DA3434"},
+    {"language": "Makefile", "value": 45, "color": "#427819"},
+    {"language": "Svelte", "value": 31, "color": "#ff3e00"},
+]
 
 
 def fetch_profile() -> dict:
@@ -75,94 +109,97 @@ def format_uptime(created_at: str, today: date = None) -> str:
     return f"{years} years, {months} months, {days} days"
 
 
-def read_leaderboard() -> tuple[str, str, str]:
-    """Returns (leaderboard_block_text, top_language, language_count)."""
-    if not LEADERBOARD_TXT.exists():
-        placeholder = (
-            "$ lang-stats --by-lines StefVuck\n"
-            "(no data yet - run the Update Language Statistics workflow first)"
-        )
-        return placeholder, "N/A", "?"
+def load_leaderboard_data() -> list[dict]:
+    if LEADERBOARD_JSON.exists():
+        with open(LEADERBOARD_JSON, encoding="utf-8") as f:
+            data = json.load(f)
+        if data:
+            return sorted(data, key=lambda d: d["value"], reverse=True)
 
-    text = LEADERBOARD_TXT.read_text(encoding="utf-8").rstrip("\n")
-    lines = text.splitlines()
-
-    count_match = re.search(r"(\d+) languages tracked", lines[1] if len(lines) > 1 else "")
-    language_count = count_match.group(1) if count_match else "?"
-
-    top_language = "N/A"
-    for line in lines[2:]:
-        stripped = line.strip()
-        if stripped and not set(stripped) <= {"-"}:
-            top_language = stripped.split()[0]
-            break
-
-    return text, top_language, language_count
+    print("Warning: no stats/leaderboard_by_lines.json found; using fallback data")
+    return FALLBACK_LEADERBOARD
 
 
-def build_stats_lines(profile: dict, top_language: str, language_count: str) -> list[str]:
+def build_stats_rows(profile: dict, top_language: str, language_count: int) -> list[dict]:
     uptime = format_uptime(profile.get("created_at", FALLBACK_PROFILE["created_at"]))
     return [
-        f"stefan@{USERNAME.lower()}",
-        "-----------------------------------",
-        "OS: ................. macOS, Linux, Embedded Targets",
-        "Host: ............... University of Glasgow",
-        f"Uptime: .............. {uptime}",
-        "Role: ................ Software Dev @ Squarepoint Capital",
-        "Field: ............... MEng Electronics & Software Eng.",
-        "IDE: ................. Neovim, VS Code, CLion",
-        "",
-        "Languages.Proficient:  Python, C++, TypeScript, JS",
-        "Languages.Learning:    Rust, Elixir, ARM/x86 Assembly",
-        "Languages.Real:        English",
-        "",
-        "Contact -----------------------------------",
-        "Email: ............... stefan@stefvuck.dev",
-        "LinkedIn: ............ /in/stefan-vučković",
-        "Portfolio: ........... stefvuck.dev",
-        f"GitHub: .............. @{USERNAME}",
-        "",
-        "GitHub Stats -----------------------------------",
-        f"Repos: {profile.get('public_repos', '?')}     "
-        f"Followers: {profile.get('followers', '?')}     "
-        f"Following: {profile.get('following', '?')}",
-        f"Public Gists: {profile.get('public_gists', '?')}",
-        f"Languages tracked: {language_count}     Top: {top_language}",
+        {"type": "header", "text": f"stefan@{USERNAME.lower()}"},
+        {"type": "rule"},
+        {"type": "kv", "label": "OS", "value": "macOS, Linux, Embedded Targets"},
+        {"type": "kv", "label": "Host", "value": "University of Glasgow"},
+        {"type": "kv", "label": "Uptime", "value": uptime},
+        {"type": "kv", "label": "Role", "value": "Software Dev @ Squarepoint Capital"},
+        {"type": "kv", "label": "Field", "value": "MEng Electronics & Software Eng."},
+        {"type": "kv", "label": "IDE", "value": "Neovim, VS Code, CLion"},
+        {"type": "blank"},
+        {"type": "kv", "label": "Languages.Proficient", "value": "Python, C++, TypeScript, JS"},
+        {"type": "kv", "label": "Languages.Learning", "value": "Rust, Elixir, ARM/x86 Assembly"},
+        {"type": "kv", "label": "Languages.Real", "value": "English"},
+        {"type": "blank"},
+        {"type": "section", "text": "Contact"},
+        {"type": "kv", "label": "Email", "value": "stefan@stefvuck.dev"},
+        {"type": "kv", "label": "LinkedIn", "value": "/in/stefan-vučković"},
+        {"type": "kv", "label": "Portfolio", "value": "stefvuck.dev"},
+        {"type": "kv", "label": "GitHub", "value": f"@{USERNAME}"},
+        {"type": "blank"},
+        {"type": "section", "text": "GitHub Stats"},
+        {"type": "raw", "text": (
+            f"Repos: {profile.get('public_repos', '?')}     "
+            f"Followers: {profile.get('followers', '?')}     "
+            f"Following: {profile.get('following', '?')}"
+        )},
+        {"type": "kv", "label": "Public Gists", "value": str(profile.get("public_gists", "?"))},
+        {"type": "kv", "label": "Languages Tracked", "value": f"{language_count} ({top_language} top)"},
     ]
 
 
-def merge_face_and_stats(face_lines: list[str], stats_lines: list[str]) -> str:
-    face_width = max(len(line) for line in face_lines)
-    total = max(len(face_lines), len(stats_lines))
-    out = []
-    for i in range(total):
-        face = face_lines[i] if i < len(face_lines) else ""
-        stat = stats_lines[i] if i < len(stats_lines) else ""
-        out.append(f"{face.ljust(face_width)}   {stat}".rstrip())
-    return "\n".join(out)
-
-
 def replace_between(content: str, start_marker: str, end_marker: str, new_block: str) -> str:
-    pattern = re.compile(
-        re.escape(start_marker) + r".*?" + re.escape(end_marker), re.DOTALL
-    )
-    replacement = f"{start_marker}\n```\n{new_block}\n```\n{end_marker}"
+    pattern = re.compile(re.escape(start_marker) + r".*?" + re.escape(end_marker), re.DOTALL)
+    replacement = f"{start_marker}\n{new_block}\n{end_marker}"
     if not pattern.search(content):
         raise ValueError(f"Markers {start_marker}/{end_marker} not found in README.md")
     return pattern.sub(lambda _m: replacement, content, count=1)
 
 
+def picture_tag(dark_path: str, light_path: str, alt: str) -> str:
+    return (
+        "<picture>\n"
+        f'  <source media="(prefers-color-scheme: dark)" srcset="{dark_path}">\n'
+        f'  <source media="(prefers-color-scheme: light)" srcset="{light_path}">\n'
+        f'  <img alt="{alt}" src="{light_path}">\n'
+        "</picture>"
+    )
+
+
 def main():
+    ASSETS_DIR.mkdir(exist_ok=True)
+
     profile = fetch_profile()
-    leaderboard_text, top_language, language_count = read_leaderboard()
+    leaderboard_data = load_leaderboard_data()
+    top_language = leaderboard_data[0]["language"] if leaderboard_data else "N/A"
+    language_count = len(leaderboard_data)
 
     face_lines = build_ascii(str(FACE_SOURCE))
-    stats_lines = build_stats_lines(profile, top_language, language_count)
-    banner = merge_face_and_stats(face_lines, stats_lines)
+    stats_rows = build_stats_rows(profile, top_language, language_count)
+
+    for theme in ("dark", "light"):
+        banner_svg = svg_banner.render(face_lines, stats_rows, theme_name=theme)
+        (ASSETS_DIR / f"banner_{theme}.svg").write_text(banner_svg, encoding="utf-8")
+
+        leaderboard_svg = svg_leaderboard.render(leaderboard_data, USERNAME, theme_name=theme)
+        (ASSETS_DIR / f"leaderboard_{theme}.svg").write_text(leaderboard_svg, encoding="utf-8")
 
     readme = README_PATH.read_text(encoding="utf-8")
-    readme = replace_between(readme, BANNER_START, BANNER_END, banner)
-    readme = replace_between(readme, LEADERBOARD_START, LEADERBOARD_END, leaderboard_text)
+    readme = replace_between(
+        readme, BANNER_START, BANNER_END,
+        picture_tag("assets/banner_dark.svg", "assets/banner_light.svg",
+                    "ASCII portrait and neofetch-style stats for StefVuck")
+    )
+    readme = replace_between(
+        readme, LEADERBOARD_START, LEADERBOARD_END,
+        picture_tag("assets/leaderboard_dark.svg", "assets/leaderboard_light.svg",
+                    "Language usage leaderboard for StefVuck")
+    )
 
     old = README_PATH.read_text(encoding="utf-8")
     if readme != old:

@@ -1,38 +1,11 @@
 # Stefan Vučković
 
 <!--ASCII-BANNER:START-->
-```
-                          ;                                  stefan@stefvuck
-                    '"!i~~~~!I,:^                            -----------------------------------
-                  `;!!l!!!!~!l,;I;"                          OS: ................. macOS, Linux, Embedded Targets
-               I!~!i~~!~?--_+~!i!~iI,                        Host: ............... University of Glasgow
-             ,iii~~~~~i+_~___~+_+~+_;I:                      Uptime: .............. 2 years, 10 months, 24 days
-           `l!!i!______~i~__+++!i~i+~~i                      Role: ................ Software Dev @ Squarepoint Capital
-           l!l!!!-___+I!;!i~+_i!!~i~!l~;                     Field: ............... MEng Electronics & Software Eng.
-          ,i!!!l!~i~!i,:::;li!i!+l,!i~+I                     IDE: ................. Neovim, VS Code, CLion
-          :+~i~~lII!l,,:,,,"",l;:"""",~i`
-           iilI,,,,::,,"^^^,Il:,,"^^^,l+^                    Languages.Proficient:  Python, C++, TypeScript, JS
-           "!I",,;:l!I""^`",;l::,""''":l,                    Languages.Learning:    Rust, Elixir, ARM/x86 Assembly
-            li,,":lli;","'',,;:::"'''"^'",                   Languages.Real:        English
-           ;III:,I:,:,,:,"^^^""""^^^^^",",
-          ';::::::::::,;:,,"^,,,"^^^^^",,:                   Contact -----------------------------------
-           """,,"""",""::"""""^",^'''''''                    Email: ............... stefan@stefvuck.dev
-            "",""""","^""",""^^,,"'''^"                      LinkedIn: ............ /in/stefan-vučković
-             ,,,,:,,:ll;:"""":;I:,"^^^`                      Portfolio: ........... stefvuck.dev
-                ';,::::I:::::,^^""'^'^`                      GitHub: .............. @StefVuck
-                 `,,""","","""''^''^''^'
-                   ",""""''``````'`''`^'``^,,^'              GitHub Stats -----------------------------------
-                   ^:,,:,,,,,:,,,^''',^'''^:I;,:,,''"        Repos: 37     Followers: 37     Following: 20
-                    ,:,;::::::,,"^^",^^^^^^^:;:;::::II,;;"   Public Gists: 4
-                     ,":,,,,,^'^^","^^^'^^'":;:I:,,;:,",:^   Languages tracked: 23     Top: TypeScript
-                    `"""^^^^^^'`^^`````````^,^^:"",,:,,,"^
-                   ,iI,,,,,,,,,,,^'^'''''^,:II;;:;:II:;II"
-                ,I_-?I,"^",:::,:~il,^^^^^,,I!:,!:;:l!!I!l,
-             ^!++_~+-,,:"^!iIi++-+!l,,""",:;;,,:;::;II;:;^
-          ``!i~~i~ii;"^"';!llii~+l^^'```'",:,^,;:,,:;:^,,^
-         'i+~i~~~+ii:"",,::!!+i~i,",^^^'",,;;,,l;;!!l;":l^
-        :i+?_+--_-+i;::::::;i-!!I::,^^^',;:;l;;!lll;;:,:;^
-```
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/banner_dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/banner_light.svg">
+  <img alt="ASCII portrait and neofetch-style stats for StefVuck" src="assets/banner_light.svg">
+</picture>
 <!--ASCII-BANNER:END-->
 
 <div align="center">
@@ -167,34 +140,11 @@ Experience spans embedded systems, distributed computing, real-time applications
 ## Most Used Languages
 
 <!--LANG-LEADERBOARD:START-->
-```
-$ lang-stats --by-lines StefVuck
-23 languages tracked  ·  92.1K lines total
-----------------------------------------------
-TypeScript  ████████████████████████   35.6K
-Python      █████████████████░░░░░░░   18.3K
-Swift       ███████████████░░░░░░░░░   13.2K
-Lua         ████████░░░░░░░░░░░░░░░░    4.3K
-Elixir      ████████░░░░░░░░░░░░░░░░    3.6K
-Go          ███████░░░░░░░░░░░░░░░░░    3.3K
-CUDA        ██████░░░░░░░░░░░░░░░░░░    2.5K
-Nix         ██████░░░░░░░░░░░░░░░░░░    2.3K
-C++         ██████░░░░░░░░░░░░░░░░░░    1.9K
-Zig         █████░░░░░░░░░░░░░░░░░░░    1.5K
-Shell       █████░░░░░░░░░░░░░░░░░░░    1.5K
-Haskell     ████░░░░░░░░░░░░░░░░░░░░     988
-C           ███░░░░░░░░░░░░░░░░░░░░░     683
-Rust        ███░░░░░░░░░░░░░░░░░░░░░     548
-COBOL       ██░░░░░░░░░░░░░░░░░░░░░░     367
-Arduino     ██░░░░░░░░░░░░░░░░░░░░░░     299
-Assembly    ██░░░░░░░░░░░░░░░░░░░░░░     287
-PowerShell  ██░░░░░░░░░░░░░░░░░░░░░░     287
-SQL         ██░░░░░░░░░░░░░░░░░░░░░░     275
-Dockerfile  ██░░░░░░░░░░░░░░░░░░░░░░     171
-CMake       █░░░░░░░░░░░░░░░░░░░░░░░      81
-Makefile    █░░░░░░░░░░░░░░░░░░░░░░░      45
-Svelte      █░░░░░░░░░░░░░░░░░░░░░░░      31
-```
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/leaderboard_dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/leaderboard_light.svg">
+  <img alt="Language usage leaderboard for StefVuck" src="assets/leaderboard_light.svg">
+</picture>
 <!--LANG-LEADERBOARD:END-->
 
 ![Better Stats](stats/leaderboard_by_lines.png)
