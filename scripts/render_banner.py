@@ -22,8 +22,7 @@ from urllib.error import URLError
 
 sys.path.insert(0, str(Path(__file__).parent))
 from ascii_face import build_ascii
-import svg_banner
-import svg_leaderboard
+import svg_profile
 
 ROOT = Path(__file__).parent.parent
 README_PATH = ROOT / "README.md"
@@ -33,8 +32,7 @@ LANGUAGE_COLORS_PATH = Path(__file__).parent / "language_colors.json"
 ASSETS_DIR = ROOT / "assets"
 USERNAME = "StefVuck"
 
-BANNER_START, BANNER_END = "<!--ASCII-BANNER:START-->", "<!--ASCII-BANNER:END-->"
-LEADERBOARD_START, LEADERBOARD_END = "<!--LANG-LEADERBOARD:START-->", "<!--LANG-LEADERBOARD:END-->"
+TERMINAL_START, TERMINAL_END = "<!--TERMINAL-PROFILE:START-->", "<!--TERMINAL-PROFILE:END-->"
 
 # Fallback profile data used if the GitHub API call fails (e.g. rate limit),
 # so a flaky run doesn't wipe the banner. Update if these facts change.
@@ -45,6 +43,24 @@ FALLBACK_PROFILE = {
     "public_gists": 4,
     "created_at": "2023-08-15T16:20:05Z",
 }
+
+# Condensed mirror of the "## Projects" section further down the README.
+# Hand-curated (not API-driven) since a couple of these aren't public repos
+# under this account. Keep in sync if that section changes.
+SELECTED_REPOS = [
+    {"name": "GUDForum", "tech": "Go · Gin · PostgreSQL · React · TS",
+     "desc": "Real-time drone society forum with secure auth"},
+    {"name": "CVinTUI", "tech": "Go · Bubbletea · Lipgloss · AWS",
+     "desc": "SSH-accessible terminal CV, cloud-hosted"},
+    {"name": "DYHTG2024T01", "tech": "React Native · DSP",
+     "desc": "Hackathon rhythm game with live beatmap generation"},
+    {"name": "Drone Swarm Sim", "tech": "Distributed Systems · Simulation",
+     "desc": "Autonomous 2D/3D shape formation, collision avoidance"},
+    {"name": "IoT Telemetry", "tech": "Embedded · LTE · Cloud",
+     "desc": "Real-time vehicle data pipeline"},
+    {"name": "CAN Display", "tech": "C · CAN Protocol · LCD",
+     "desc": "Low-level CAN bus data visualization on LCD"},
+]
 
 FALLBACK_LEADERBOARD = [
     {"language": "TypeScript", "value": 35600, "color": "#2b7489"},
@@ -183,22 +199,16 @@ def main():
     stats_rows = build_stats_rows(profile, top_language, language_count)
 
     for theme in ("dark", "light"):
-        banner_svg = svg_banner.render(face_lines, stats_rows, theme_name=theme)
-        (ASSETS_DIR / f"banner_{theme}.svg").write_text(banner_svg, encoding="utf-8")
-
-        leaderboard_svg = svg_leaderboard.render(leaderboard_data, USERNAME, theme_name=theme)
-        (ASSETS_DIR / f"leaderboard_{theme}.svg").write_text(leaderboard_svg, encoding="utf-8")
+        profile_svg = svg_profile.render(face_lines, stats_rows, leaderboard_data, USERNAME,
+                                          SELECTED_REPOS, theme_name=theme)
+        (ASSETS_DIR / f"profile_{theme}.svg").write_text(profile_svg, encoding="utf-8")
 
     readme = README_PATH.read_text(encoding="utf-8")
     readme = replace_between(
-        readme, BANNER_START, BANNER_END,
-        picture_tag("assets/banner_dark.svg", "assets/banner_light.svg",
-                    "ASCII portrait and neofetch-style stats for StefVuck")
-    )
-    readme = replace_between(
-        readme, LEADERBOARD_START, LEADERBOARD_END,
-        picture_tag("assets/leaderboard_dark.svg", "assets/leaderboard_light.svg",
-                    "Language usage leaderboard for StefVuck")
+        readme, TERMINAL_START, TERMINAL_END,
+        picture_tag("assets/profile_dark.svg", "assets/profile_light.svg",
+                    "Terminal window with an ASCII portrait, neofetch-style stats, "
+                    "language leaderboard, and selected repos for StefVuck")
     )
 
     old = README_PATH.read_text(encoding="utf-8")

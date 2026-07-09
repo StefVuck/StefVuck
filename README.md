@@ -1,12 +1,12 @@
 # Stefan Vučković
 
-<!--ASCII-BANNER:START-->
+<!--TERMINAL-PROFILE:START-->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/banner_dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/banner_light.svg">
-  <img alt="ASCII portrait and neofetch-style stats for StefVuck" src="assets/banner_light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/profile_dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/profile_light.svg">
+  <img alt="Terminal window with an ASCII portrait, neofetch-style stats, language leaderboard, and selected repos for StefVuck" src="assets/profile_light.svg">
 </picture>
-<!--ASCII-BANNER:END-->
+<!--TERMINAL-PROFILE:END-->
 
 <div align="center">
 
@@ -139,13 +139,8 @@ Experience spans embedded systems, distributed computing, real-time applications
 
 ## Most Used Languages
 
-<!--LANG-LEADERBOARD:START-->
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/leaderboard_dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/leaderboard_light.svg">
-  <img alt="Language usage leaderboard for StefVuck" src="assets/leaderboard_light.svg">
-</picture>
-<!--LANG-LEADERBOARD:END-->
+See the terminal window above for the language leaderboard, or the detailed
+per-repo breakdown below:
 
 ![Better Stats](stats/leaderboard_by_lines.png)
 Want to use this yourself?
