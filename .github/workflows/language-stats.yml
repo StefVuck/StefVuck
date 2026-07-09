@@ -18,10 +18,12 @@
           uses: actions/checkout@v4
 
         - name: Generate Language Statistics
-          uses: StefVuck/Github-Language-Stats@v1
+          # TODO: point back at a released tag (e.g. @v1.1) once the 'ascii'
+          # visualization type lands on Github-Language-Stats main/v1.
+          uses: StefVuck/Github-Language-Stats@claude/ascii-readme-leaderboard-985jvs
           with:
-            visualization_types: 'leaderboard'
-            github_token: ${{ secrets.LANGUAGE_STATS_TOKEN }}  
+            visualization_types: 'leaderboard ascii'
+            github_token: ${{ secrets.LANGUAGE_STATS_TOKEN }}
             output_path: 'stats'
             exclude_languages: 'HTML,CSS,Jupyter Notebook,Mermaid,Astro,Markdown,JSON,Javascript'
             top_repos_count: '5'

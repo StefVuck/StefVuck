@@ -1,33 +1,39 @@
 # Stefan Vučković
 
+<!--ASCII-BANNER:START-->
 ```
-                      W*ahkhoM                        stefan@stefvuck
-                  kZX1}{([??-__?{tYd                  -----------------------------------
-             aOq0YwQ0JUYXzuf|{]_~ll!l}Q               OS: ................. macOS, Linux, Embedded Targets
-          kUrjYCLQmmZb*oMomCCOYj}iIl;I\Cwo            Host: ............... University of Glasgow
-         #bbZCZmwdkadk*a# *kaoqJnt+l;ItCZwqo          Uptime: .............. 2 years, 10 months, 24 days
-       #M#*wZwpbh M***pkW&#*kqJOQY/!;lnQwqpwkW        Role: ................ Software Dev @ Squarepoint Capital
-     Mo*ka*appddooaabJxvCqhhqZJOmZc!;lYXzOJCJzQ       Field: ............... MEng Electronics & Software Eng.
-     #oabbhkkbkbOzCJj1]?{tXJJXf/xnJi";rztYnvvXx0      IDE: ................. Neovim, VS Code, CLion
-   &*kQbwdddakUf(/)]-_+++~_[[]~lI?n)"IxXLOO0ppOJp
-   kkokhqrxcOU{)/fxvj}+~]rXv/1}_I]jn:lCZZw0J00wqO*    Languages.Proficient:  Python, C++, TypeScript, JS
-  dbwwZqaam0CZ|t|rvzn|}~i[tx/1]+l-~+1!OpdbZCQLmwkb    Languages.Learning:    Rust, Elixir, ARM/x86 Assembly
- &QbdkakkdOzfnr(||))111-!i~_+~i!ll+}_!ZwOwbwqpqkdb    Languages.Real:        English
- k0wwCqabJLY(1/)]__-}1){-]+?[+!l!I~_+Iwkbkdhkdqbdp#
- dn0qokoak0Yj1)(}--))|/\([_~}\-i!i~i;:qhqmwbkbqkoa#   Contact -----------------------------------
- mCzuXwZkmdqpr}{)}{)|f/({?]\x|?~!l:;::wpphb0bpqh*pM   Email: ............... stefan@stefvuck.dev
- *QO(vOdpuQQLJzCz(}}/x/()({-~~+!ll;;::UwwbkdpOpbbk    LinkedIn: ............ /in/stefan-vučković
-  CCYOpbwczUOOOXcf1{]]})1}_illii!Ii:"IwpwbbpmCph*a    Portfolio: ........... stefvuck.dev
-  Mp0LmZdwwCCOzrnxY(1}]_~+~i~++i+!~,,~OZYzQw0YLpOo    GitHub: .............. @StefVuck
-   hZbbpdwddhpYufnwx\/t///({?+~ii_,,:;+]rff/xvCOb
-    bOJdwqqmdbdpk0bk\)((){[_~~~++:,:::i{xrrftjfU      GitHub Stats -----------------------------------
-     pOqqOOQYOwhdwdk\\{1{[_~~~-~:,,,:;-rrrrfrnQ       Repos: 37     Followers: 37     Following: 20
-      d)[[]]]]]]]??\\}({[]?_--!:,,,::_/xxxxrua        Public Gists: 4
-        J[----__?(zC/?ii-}]](ru|!:::!{xxrrnZ          Top Language (by LOC): TypeScript, 35.6K lines
-          Q)-?/cUJUJ(?__OZQQJzYj{}?~_tnrvw
-            opOCJJUf[[_t0qZLXYt_-iii_cZ#
-                #d0x{]-/}umCXn-?[|vm
+                          ;                                  stefan@stefvuck
+                    '"!i~~~~!I,:^                            -----------------------------------
+                  `;!!l!!!!~!l,;I;"                          OS: ................. macOS, Linux, Embedded Targets
+               I!~!i~~!~?--_+~!i!~iI,                        Host: ............... University of Glasgow
+             ,iii~~~~~i+_~___~+_+~+_;I:                      Uptime: .............. 2 years, 10 months, 24 days
+           `l!!i!______~i~__+++!i~i+~~i                      Role: ................ Software Dev @ Squarepoint Capital
+           l!l!!!-___+I!;!i~+_i!!~i~!l~;                     Field: ............... MEng Electronics & Software Eng.
+          ,i!!!l!~i~!i,:::;li!i!+l,!i~+I                     IDE: ................. Neovim, VS Code, CLion
+          :+~i~~lII!l,,:,,,"",l;:"""",~i`
+           iilI,,,,::,,"^^^,Il:,,"^^^,l+^                    Languages.Proficient:  Python, C++, TypeScript, JS
+           "!I",,;:l!I""^`",;l::,""''":l,                    Languages.Learning:    Rust, Elixir, ARM/x86 Assembly
+            li,,":lli;","'',,;:::"'''"^'",                   Languages.Real:        English
+           ;III:,I:,:,,:,"^^^""""^^^^^",",
+          ';::::::::::,;:,,"^,,,"^^^^^",,:                   Contact -----------------------------------
+           """,,"""",""::"""""^",^'''''''                    Email: ............... stefan@stefvuck.dev
+            "",""""","^""",""^^,,"'''^"                      LinkedIn: ............ /in/stefan-vučković
+             ,,,,:,,:ll;:"""":;I:,"^^^`                      Portfolio: ........... stefvuck.dev
+                ';,::::I:::::,^^""'^'^`                      GitHub: .............. @StefVuck
+                 `,,""","","""''^''^''^'
+                   ",""""''``````'`''`^'``^,,^'              GitHub Stats -----------------------------------
+                   ^:,,:,,,,,:,,,^''',^'''^:I;,:,,''"        Repos: 37     Followers: 37     Following: 20
+                    ,:,;::::::,,"^^",^^^^^^^:;:;::::II,;;"   Public Gists: 4
+                     ,":,,,,,^'^^","^^^'^^'":;:I:,,;:,",:^   Languages tracked: 23     Top: TypeScript
+                    `"""^^^^^^'`^^`````````^,^^:"",,:,,,"^
+                   ,iI,,,,,,,,,,,^'^'''''^,:II;;:;:II:;II"
+                ,I_-?I,"^",:::,:~il,^^^^^,,I!:,!:;:l!!I!l,
+             ^!++_~+-,,:"^!iIi++-+!l,,""",:;;,,:;::;II;:;^
+          ``!i~~i~ii;"^"';!llii~+l^^'```'",:,^,;:,,:;:^,,^
+         'i+~i~~~+ii:"",,::!!+i~i,",^^^'",,;;,,l;;!!l;":l^
+        :i+?_+--_-+i;::::::;i-!!I::,^^^',;:;l;;!lll;;:,:;^
 ```
+<!--ASCII-BANNER:END-->
 
 <div align="center">
 
@@ -160,22 +166,36 @@ Experience spans embedded systems, distributed computing, real-time applications
 
 ## Most Used Languages
 
+<!--LANG-LEADERBOARD:START-->
 ```
 $ lang-stats --by-lines StefVuck
---------------------------------------------------
-TypeScript  ████████████████████████████   35.6K
-Python      ██████████████░░░░░░░░░░░░░░   18.3K
-Swift       ██████████░░░░░░░░░░░░░░░░░░   13.2K
-Lua         ███░░░░░░░░░░░░░░░░░░░░░░░░░    4.3K
-Elixir      ███░░░░░░░░░░░░░░░░░░░░░░░░░    3.6K
-Go          ███░░░░░░░░░░░░░░░░░░░░░░░░░    3.3K
-CUDA        ██░░░░░░░░░░░░░░░░░░░░░░░░░░    2.5K
-Nix         ██░░░░░░░░░░░░░░░░░░░░░░░░░░    2.3K
-C++         █░░░░░░░░░░░░░░░░░░░░░░░░░░░    1.9K
-Zig         █░░░░░░░░░░░░░░░░░░░░░░░░░░░    1.5K
-Shell       █░░░░░░░░░░░░░░░░░░░░░░░░░░░    1.5K
-Haskell     █░░░░░░░░░░░░░░░░░░░░░░░░░░░     988
+23 languages tracked  ·  92.1K lines total
+----------------------------------------------
+TypeScript  ████████████████████████   35.6K
+Python      █████████████████░░░░░░░   18.3K
+Swift       ███████████████░░░░░░░░░   13.2K
+Lua         ████████░░░░░░░░░░░░░░░░    4.3K
+Elixir      ████████░░░░░░░░░░░░░░░░    3.6K
+Go          ███████░░░░░░░░░░░░░░░░░    3.3K
+CUDA        ██████░░░░░░░░░░░░░░░░░░    2.5K
+Nix         ██████░░░░░░░░░░░░░░░░░░    2.3K
+C++         ██████░░░░░░░░░░░░░░░░░░    1.9K
+Zig         █████░░░░░░░░░░░░░░░░░░░    1.5K
+Shell       █████░░░░░░░░░░░░░░░░░░░    1.5K
+Haskell     ████░░░░░░░░░░░░░░░░░░░░     988
+C           ███░░░░░░░░░░░░░░░░░░░░░     683
+Rust        ███░░░░░░░░░░░░░░░░░░░░░     548
+COBOL       ██░░░░░░░░░░░░░░░░░░░░░░     367
+Arduino     ██░░░░░░░░░░░░░░░░░░░░░░     299
+Assembly    ██░░░░░░░░░░░░░░░░░░░░░░     287
+PowerShell  ██░░░░░░░░░░░░░░░░░░░░░░     287
+SQL         ██░░░░░░░░░░░░░░░░░░░░░░     275
+Dockerfile  ██░░░░░░░░░░░░░░░░░░░░░░     171
+CMake       █░░░░░░░░░░░░░░░░░░░░░░░      81
+Makefile    █░░░░░░░░░░░░░░░░░░░░░░░      45
+Svelte      █░░░░░░░░░░░░░░░░░░░░░░░      31
 ```
+<!--LANG-LEADERBOARD:END-->
 
 ![Better Stats](stats/leaderboard_by_lines.png)
 Want to use this yourself?
