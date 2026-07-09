@@ -62,7 +62,11 @@ def wrap_terminal(width: int, height: int, theme: dict, body: str, title: str = 
     card, a titlebar with macOS-style traffic-light dots, and the body
     content (already laid out relative to y=0) shifted below it."""
     total_h = height + TITLEBAR_H
-    clip_id = f"card-clip-{abs(hash((width, total_h, title))) % 100000}"
+    # Static id: each SVG is loaded standalone via <img>, so there's no
+    # cross-document collision risk. A random/hash-based id would just make
+    # every regeneration diff even when the rendered content is unchanged
+    # (Python's str hash() is randomized per-process).
+    clip_id = "terminal-card-clip"
 
     dots = ''.join(
         f'<circle cx="{x}" cy="{TITLEBAR_H / 2}" r="6" fill="{color}"/>'
