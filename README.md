@@ -21,7 +21,12 @@
 </div>
 
 ---
-Paper CV at: [https://cv.stefvuck.dev](https://cv.stefvuck.dev)
+
+## CV
+
+[![View CV](https://img.shields.io/badge/View_CV-2b7489?style=for-the-badge&logo=googledocs&logoColor=white)](https://cv.stefvuck.dev)
+
+Full CV, including education, experience, and achievements: **[<u>cv.stefvuck.dev</u>](https://cv.stefvuck.dev)**
 
 ---
 
@@ -32,8 +37,8 @@ Embedded software engineer specializing in performance optimization and low-leve
 Recently completed Master's Project on Low-level Optimisation for Microcontrollers
 Experience spans embedded systems, distributed computing, real-time applications, and full-stack development.
 
-[Porfolio Website](https://stefvuck.dev)
-[Infrequent Blog Posts](https://stefvuck.dev/blog) 
+[<u>Porfolio Website</u>](https://stefvuck.dev)
+[<u>Infrequent Blog Posts</u>](https://stefvuck.dev/blog) 
 
 ---
 
@@ -144,24 +149,24 @@ per-repo breakdown below:
 
 ![Better Stats](stats/leaderboard_by_lines.png)
 Want to use this yourself?
-[Try for free with Github Marketplace](https://github.com/marketplace/actions/github-profile-language-analytics)
+[<u>Try for free with Github Marketplace</u>](https://github.com/marketplace/actions/github-profile-language-analytics)
 ---
 
 ## Projects
 
-### [Forum for Glasgow University Drone Society](https://github.com/StefVuck/GUDForum)
+### [<u>Forum for Glasgow University Drone Society</u>](https://github.com/StefVuck/GUDForum)
 
 *Go | Gin | PostgreSQL | React | TypeScript | WebSockets*
 - Full-stack forum platform with real-time messaging and secure authentication
 - Responsive design optimized for cross-device compatibility
 
-### [Terminal CV TUI](https://github.com/StefVuck/CVinTUI)
+### [<u>Terminal CV TUI</u>](https://github.com/StefVuck/CVinTUI)
 
 *Go | Bubbletea | Lipgloss | AWS*
 - Interactive terminal-based CV interface deployed on cloud infrastructure
 - Accessible via SSH with optimized resource usage
 
-### [Mobile Rhythm Game](https://github.com/JazzyMaxine/DYHTG2024T01)
+### [<u>Mobile Rhythm Game</u>](https://github.com/JazzyMaxine/DYHTG2024T01)
 
 *React Native | Digital Signal Processing*
 - DYHTG 2024 Hackathon contestant with dynamic beatmap generation
@@ -170,13 +175,18 @@ Want to use this yourself?
 ### Drone Swarm Simulation Software
 
 *Distributed Systems | Simulation | Collision Avoidance*
-- Scalable distributed logic for autonomous 2D/3D shape formation
-- Real-time simulation framework with advanced collision-avoidance algorithms
+- Researching distributed drone-swarm logic to autonomously form complex 2D/3D shapes
+- Built a real-time simulation framework to rigorously verify collision-avoidance algorithms
+- Optimised performance for smooth, large-swarm simulations on commodity hardware
 
-### IoT Telemetry System
+### UGRacing: Embedded IoT Telemetry System
 
-*Embedded Systems | LTE | Cloud Services*
-- Real-time vehicle data transmission using embedded systems and cloud processing
+*C | C++ | Embedded | IoT | Terraform*
+- Architected an end-to-end telemetry pipeline with sub-500ms latency from racecar sensors
+  via Arduino and LTE-M cellular connectivity, for real-time vehicle dynamics analysis
+- Enabled live track-side diagnostics for all future test sessions
+- Automated cloud infrastructure deployment with Terraform, with handover docs enabling
+  non-technical team members to provision environments independently
 
 ### Low-Level CAN Display System
 

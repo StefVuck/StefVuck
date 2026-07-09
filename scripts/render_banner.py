@@ -31,6 +31,7 @@ LEADERBOARD_JSON = ROOT / "stats" / "leaderboard_by_lines.json"
 LANGUAGE_COLORS_PATH = Path(__file__).parent / "language_colors.json"
 ASSETS_DIR = ROOT / "assets"
 USERNAME = "StefVuck"
+BIRTHDATE = "2003-06-12T00:00:00Z"
 
 TERMINAL_START, TERMINAL_END = "<!--TERMINAL-PROFILE:START-->", "<!--TERMINAL-PROFILE:END-->"
 
@@ -55,9 +56,9 @@ SELECTED_REPOS = [
     {"name": "DYHTG2024T01", "tech": "React Native · DSP",
      "desc": "Hackathon rhythm game with live beatmap generation"},
     {"name": "Drone Swarm Sim", "tech": "Distributed Systems · Simulation",
-     "desc": "Autonomous 2D/3D shape formation, collision avoidance"},
-    {"name": "IoT Telemetry", "tech": "Embedded · LTE · Cloud",
-     "desc": "Real-time vehicle data pipeline"},
+     "desc": "Distributed drone-swarm logic autonomously forming 2D/3D shapes"},
+    {"name": "UGRacing Telemetry", "tech": "Arduino · LTE-M · Terraform · C/C++",
+     "desc": "Sub-500ms racecar telemetry pipeline, live track-side diagnostics"},
     {"name": "CAN Display", "tech": "C · CAN Protocol · LCD",
      "desc": "Low-level CAN bus data visualization on LCD"},
 ]
@@ -105,6 +106,35 @@ def fetch_profile() -> dict:
         return FALLBACK_PROFILE
 
 
+def fetch_star_total() -> int | None:
+    """Sum stargazers_count across owned public repos. Returns None on failure
+    so the caller can render '?' instead of a fabricated number."""
+    headers = {"Accept": "application/vnd.github+json", "User-Agent": USERNAME}
+    token = os.environ.get("GITHUB_TOKEN")
+    if token:
+        headers["Authorization"] = f"Bearer {token}"
+
+    total = 0
+    page = 1
+    try:
+        while True:
+            url = f"https://api.github.com/users/{USERNAME}/repos?per_page=100&page={page}&type=owner"
+            req = Request(url, headers=headers)
+            with urlopen(req, timeout=10) as resp:
+                repos = json.load(resp)
+            if not repos:
+                break
+            total += sum(r.get("stargazers_count", 0) for r in repos)
+            if len(repos) < 100:
+                break
+            page += 1
+    except (URLError, TimeoutError, OSError) as exc:
+        print(f"Warning: could not fetch star count ({exc})")
+        return None
+
+    return total
+
+
 def format_uptime(created_at: str, today: date = None) -> str:
     created = datetime.strptime(created_at, "%Y-%m-%dT%H:%M:%SZ").date()
     today = today or date.today()
@@ -136,8 +166,11 @@ def load_leaderboard_data() -> list[dict]:
     return FALLBACK_LEADERBOARD
 
 
-def build_stats_rows(profile: dict, top_language: str, language_count: int) -> list[dict]:
-    uptime = format_uptime(profile.get("created_at", FALLBACK_PROFILE["created_at"]))
+def build_stats_rows(profile: dict, top_language: str, language_count: int,
+                      star_total: int | None) -> list[dict]:
+    uptime = format_uptime(BIRTHDATE)
+    stars_display = str(star_total) if star_total is not None else "?"
+
     return [
         {"type": "header", "text": f"stefan@{USERNAME.lower()}"},
         {"type": "rule"},
@@ -150,20 +183,24 @@ def build_stats_rows(profile: dict, top_language: str, language_count: int) -> l
         {"type": "blank"},
         {"type": "kv", "label": "Languages.Proficient", "value": "Python, C++, TypeScript, JS"},
         {"type": "kv", "label": "Languages.Learning", "value": "Rust, Elixir, ARM/x86 Assembly"},
-        {"type": "kv", "label": "Languages.Real", "value": "English"},
+        {"type": "kv", "label": "Languages.Real", "value": "English, Serbian, German"},
         {"type": "blank"},
         {"type": "section", "text": "Contact"},
         {"type": "kv", "label": "Email", "value": "stefan@stefvuck.dev"},
         {"type": "kv", "label": "LinkedIn", "value": "/in/stefan-vučković"},
         {"type": "kv", "label": "Portfolio", "value": "stefvuck.dev"},
+        {"type": "kv", "label": "CV", "value": "cv.stefvuck.dev"},
         {"type": "kv", "label": "GitHub", "value": f"@{USERNAME}"},
         {"type": "blank"},
         {"type": "section", "text": "GitHub Stats"},
-        {"type": "raw", "text": (
-            f"Repos: {profile.get('public_repos', '?')}     "
-            f"Followers: {profile.get('followers', '?')}     "
-            f"Following: {profile.get('following', '?')}"
-        )},
+        {"type": "kv2", "pairs": [
+            ("Repos", str(profile.get("public_repos", "?"))),
+            ("Stars", stars_display),
+        ]},
+        {"type": "kv2", "pairs": [
+            ("Followers", str(profile.get("followers", "?"))),
+            ("Following", str(profile.get("following", "?"))),
+        ]},
         {"type": "kv", "label": "Public Gists", "value": str(profile.get("public_gists", "?"))},
         {"type": "kv", "label": "Languages Tracked", "value": f"{language_count} ({top_language} top)"},
     ]
@@ -191,12 +228,13 @@ def main():
     ASSETS_DIR.mkdir(exist_ok=True)
 
     profile = fetch_profile()
+    star_total = fetch_star_total()
     leaderboard_data = load_leaderboard_data()
     top_language = leaderboard_data[0]["language"] if leaderboard_data else "N/A"
     language_count = len(leaderboard_data)
 
     face_lines = build_ascii(str(FACE_SOURCE))
-    stats_rows = build_stats_rows(profile, top_language, language_count)
+    stats_rows = build_stats_rows(profile, top_language, language_count, star_total)
 
     for theme in ("dark", "light"):
         profile_svg = svg_profile.render(face_lines, stats_rows, leaderboard_data, USERNAME,

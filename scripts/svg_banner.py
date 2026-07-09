@@ -12,6 +12,8 @@ def _stats_line_width(rows: list[dict], label_col: int) -> int:
     for row in rows:
         if row["type"] == "kv":
             text = f'{row["label"]}: ' + '.' * max(label_col - len(row["label"]) - 1, 3) + f' {row["value"]}'
+        elif row["type"] == "kv2":
+            text = "   |   ".join(f'{label}: {value}' for label, value in row["pairs"])
         else:
             text = row.get("text", "")
         widest = max(widest, len(text))
@@ -89,6 +91,20 @@ def body(face_lines: list[str], stats_rows: list[dict], theme: dict, font_size: 
                 f'<tspan fill="{theme["dots"]}"> {esc(dots)} </tspan>'
                 f'<tspan fill="{theme["text"]}">{esc(row["value"])}</tspan>'
                 f'</text>'
+            )
+        elif rtype == "kv2":
+            sub_col = row.get("sub_col", 10)
+            tspans = []
+            for idx, (sub_label, sub_value) in enumerate(row["pairs"]):
+                sub_dots = '.' * max(sub_col - len(sub_label) - 1, 2)
+                tspans.append(f'<tspan fill="{theme["key"]}">{esc(sub_label)}:</tspan>')
+                tspans.append(f'<tspan fill="{theme["dots"]}"> {esc(sub_dots)} </tspan>')
+                tspans.append(f'<tspan fill="{theme["text"]}">{esc(sub_value)}</tspan>')
+                if idx == 0:
+                    tspans.append(f'<tspan fill="{theme["dots"]}">   |   </tspan>')
+            parts.append(
+                f'<text x="{stats_x}" y="{y}" font-size="{font_size}" '
+                f'xml:space="preserve">{"".join(tspans)}</text>'
             )
 
     return ''.join(parts), width, height
