@@ -1,5 +1,34 @@
 # Stefan Vučković
 
+```
+                      W*ahkhoM                        stefan@stefvuck
+                  kZX1}{([??-__?{tYd                  -----------------------------------
+             aOq0YwQ0JUYXzuf|{]_~ll!l}Q               OS: ................. macOS, Linux, Embedded Targets
+          kUrjYCLQmmZb*oMomCCOYj}iIl;I\Cwo            Host: ............... University of Glasgow
+         #bbZCZmwdkadk*a# *kaoqJnt+l;ItCZwqo          Uptime: .............. 2 years, 10 months, 24 days
+       #M#*wZwpbh M***pkW&#*kqJOQY/!;lnQwqpwkW        Role: ................ Software Dev @ Squarepoint Capital
+     Mo*ka*appddooaabJxvCqhhqZJOmZc!;lYXzOJCJzQ       Field: ............... MEng Electronics & Software Eng.
+     #oabbhkkbkbOzCJj1]?{tXJJXf/xnJi";rztYnvvXx0      IDE: ................. Neovim, VS Code, CLion
+   &*kQbwdddakUf(/)]-_+++~_[[]~lI?n)"IxXLOO0ppOJp
+   kkokhqrxcOU{)/fxvj}+~]rXv/1}_I]jn:lCZZw0J00wqO*    Languages.Proficient:  Python, C++, TypeScript, JS
+  dbwwZqaam0CZ|t|rvzn|}~i[tx/1]+l-~+1!OpdbZCQLmwkb    Languages.Learning:    Rust, Elixir, ARM/x86 Assembly
+ &QbdkakkdOzfnr(||))111-!i~_+~i!ll+}_!ZwOwbwqpqkdb    Languages.Real:        English
+ k0wwCqabJLY(1/)]__-}1){-]+?[+!l!I~_+Iwkbkdhkdqbdp#
+ dn0qokoak0Yj1)(}--))|/\([_~}\-i!i~i;:qhqmwbkbqkoa#   Contact -----------------------------------
+ mCzuXwZkmdqpr}{)}{)|f/({?]\x|?~!l:;::wpphb0bpqh*pM   Email: ............... stefan@stefvuck.dev
+ *QO(vOdpuQQLJzCz(}}/x/()({-~~+!ll;;::UwwbkdpOpbbk    LinkedIn: ............ /in/stefan-vučković
+  CCYOpbwczUOOOXcf1{]]})1}_illii!Ii:"IwpwbbpmCph*a    Portfolio: ........... stefvuck.dev
+  Mp0LmZdwwCCOzrnxY(1}]_~+~i~++i+!~,,~OZYzQw0YLpOo    GitHub: .............. @StefVuck
+   hZbbpdwddhpYufnwx\/t///({?+~ii_,,:;+]rff/xvCOb
+    bOJdwqqmdbdpk0bk\)((){[_~~~++:,:::i{xrrftjfU      GitHub Stats -----------------------------------
+     pOqqOOQYOwhdwdk\\{1{[_~~~-~:,,,:;-rrrrfrnQ       Repos: 37     Followers: 37     Following: 20
+      d)[[]]]]]]]??\\}({[]?_--!:,,,::_/xxxxrua        Public Gists: 4
+        J[----__?(zC/?ii-}]](ru|!:::!{xxrrnZ          Top Language (by LOC): TypeScript, 35.6K lines
+          Q)-?/cUJUJ(?__OZQQJzYj{}?~_tnrvw
+            opOCJJUf[[_t0qZLXYt_-iii_cZ#
+                #d0x{]-/}umCXn-?[|vm
+```
+
 <div align="center">
 
 
@@ -130,6 +159,24 @@ Experience spans embedded systems, distributed computing, real-time applications
 ![DigitalOcean](https://img.shields.io/badge/DigitalOcean-0080FF?style=for-the-badge&logo=digitalocean&logoColor=white)
 
 ## Most Used Languages
+
+```
+$ lang-stats --by-lines StefVuck
+--------------------------------------------------
+TypeScript  ████████████████████████████   35.6K
+Python      ██████████████░░░░░░░░░░░░░░   18.3K
+Swift       ██████████░░░░░░░░░░░░░░░░░░   13.2K
+Lua         ███░░░░░░░░░░░░░░░░░░░░░░░░░    4.3K
+Elixir      ███░░░░░░░░░░░░░░░░░░░░░░░░░    3.6K
+Go          ███░░░░░░░░░░░░░░░░░░░░░░░░░    3.3K
+CUDA        ██░░░░░░░░░░░░░░░░░░░░░░░░░░    2.5K
+Nix         ██░░░░░░░░░░░░░░░░░░░░░░░░░░    2.3K
+C++         █░░░░░░░░░░░░░░░░░░░░░░░░░░░    1.9K
+Zig         █░░░░░░░░░░░░░░░░░░░░░░░░░░░    1.5K
+Shell       █░░░░░░░░░░░░░░░░░░░░░░░░░░░    1.5K
+Haskell     █░░░░░░░░░░░░░░░░░░░░░░░░░░░     988
+```
+
 ![Better Stats](stats/leaderboard_by_lines.png)
 Want to use this yourself?
 [Try for free with Github Marketplace](https://github.com/marketplace/actions/github-profile-language-analytics)
