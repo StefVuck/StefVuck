@@ -1,58 +1,58 @@
 [
   {
     "language": "TypeScript",
-    "value": 35600,
+    "value": 39617,
     "color": "#2b7489"
   },
   {
     "language": "Python",
-    "value": 18300,
+    "value": 23075,
     "color": "#3572A5"
   },
   {
     "language": "Swift",
-    "value": 13200,
+    "value": 13179,
     "color": "#ffac45"
   },
   {
     "language": "Lua",
-    "value": 4300,
+    "value": 4278,
     "color": "#000080"
   },
   {
     "language": "Elixir",
-    "value": 3600,
+    "value": 3559,
     "color": "#6e4a7e"
   },
   {
     "language": "Go",
-    "value": 3300,
+    "value": 3297,
     "color": "#00ADD8"
   },
   {
-    "language": "CUDA",
-    "value": 2500,
-    "color": "#888888"
-  },
-  {
     "language": "Nix",
-    "value": 2300,
+    "value": 2681,
     "color": "#7e7eff"
   },
   {
+    "language": "Cuda",
+    "value": 2459,
+    "color": "#888888"
+  },
+  {
     "language": "C++",
-    "value": 1900,
+    "value": 1944,
     "color": "#f34b7d"
   },
   {
-    "language": "Zig",
-    "value": 1500,
-    "color": "#ec915c"
+    "language": "Shell",
+    "value": 1613,
+    "color": "#89e051"
   },
   {
-    "language": "Shell",
-    "value": 1500,
-    "color": "#89e051"
+    "language": "Zig",
+    "value": 1513,
+    "color": "#ec915c"
   },
   {
     "language": "Haskell",

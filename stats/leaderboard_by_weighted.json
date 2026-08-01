@@ -1,0 +1,117 @@
+[
+  {
+    "language": "Python",
+    "value": 0.7912259888431734,
+    "color": "#3572A5"
+  },
+  {
+    "language": "TypeScript",
+    "value": 0.75,
+    "color": "#2b7489"
+  },
+  {
+    "language": "Shell",
+    "value": 0.33853924050051976,
+    "color": "#89e051"
+  },
+  {
+    "language": "Swift",
+    "value": 0.21178465626556092,
+    "color": "#ffac45"
+  },
+  {
+    "language": "Go",
+    "value": 0.1779745609667108,
+    "color": "#00ADD8"
+  },
+  {
+    "language": "Lua",
+    "value": 0.1221737913246609,
+    "color": "#000080"
+  },
+  {
+    "language": "PowerShell",
+    "value": 0.11725854603280961,
+    "color": "#012456"
+  },
+  {
+    "language": "Dockerfile",
+    "value": 0.11579452806072692,
+    "color": "#384d54"
+  },
+  {
+    "language": "Nix",
+    "value": 0.10201830251935004,
+    "color": "#7e7eff"
+  },
+  {
+    "language": "Elixir",
+    "value": 0.09037213133939287,
+    "color": "#6e4a7e"
+  },
+  {
+    "language": "SQL",
+    "value": 0.07165255044322111,
+    "color": "#e38c00"
+  },
+  {
+    "language": "Cuda",
+    "value": 0.05376192956650841,
+    "color": "#888888"
+  },
+  {
+    "language": "COBOL",
+    "value": 0.050086395417945004,
+    "color": "#555555"
+  },
+  {
+    "language": "Arduino",
+    "value": 0.04922817798603446,
+    "color": "#bd79d1"
+  },
+  {
+    "language": "C++",
+    "value": 0.04726219460424473,
+    "color": "#f34b7d"
+  },
+  {
+    "language": "CMake",
+    "value": 0.046476833866085955,
+    "color": "#DA3434"
+  },
+  {
+    "language": "Makefile",
+    "value": 0.046022483460956845,
+    "color": "#427819"
+  },
+  {
+    "language": "Zig",
+    "value": 0.041822610587282316,
+    "color": "#ec915c"
+  },
+  {
+    "language": "Haskell",
+    "value": 0.035196667179149446,
+    "color": "#5e5086"
+  },
+  {
+    "language": "C",
+    "value": 0.03134730958013892,
+    "color": "#555555"
+  },
+  {
+    "language": "Rust",
+    "value": 0.029643495560904756,
+    "color": "#dea584"
+  },
+  {
+    "language": "Assembly",
+    "value": 0.0263494551237187,
+    "color": "#6E4C13"
+  },
+  {
+    "language": "Svelte",
+    "value": 0.02311851890946724,
+    "color": "#ff3e00"
+  }
+]
