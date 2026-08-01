@@ -169,10 +169,11 @@ def format_uptime(created_at: str, today: date = None) -> str:
     return f"{years} years, {months} months, {days} days"
 
 
-def load_face(path: Path, side_pad: int = 4) -> list[str]:
+def load_face(path: Path, side_pad: int = 6) -> list[str]:
     """Read the hand-authored ASCII portrait, trimming trailing whitespace,
     the shared left margin, and blank edge lines, then re-inset it by side_pad
-    columns so the (originally circular) portrait has breathing room in the pane.
+    columns on each side so the (originally circular) portrait has breathing
+    room from the pane border on the left and the stats column on the right.
     """
     lines = [l.rstrip() for l in path.read_text(encoding="utf-8").splitlines()]
     while lines and not lines[0].strip():
@@ -181,7 +182,7 @@ def load_face(path: Path, side_pad: int = 4) -> list[str]:
         lines.pop()
     indent = min((len(l) - len(l.lstrip()) for l in lines if l.strip()), default=0)
     margin = " " * side_pad
-    return [margin + l[indent:] for l in lines]
+    return [margin + l[indent:] + margin for l in lines]
 
 
 def load_leaderboard_data() -> list[dict]:
