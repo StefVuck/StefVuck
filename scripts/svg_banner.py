@@ -25,29 +25,38 @@ def label_column_width(rows: list[dict]) -> int:
 
 
 def body(face_lines: list[str], stats_rows: list[dict], theme: dict, font_size: int = 14,
-         pad: int = 16):
-    """Returns (svg_fragment, width, height) for the face+stats pane."""
+         face_font_size: int = 8, pad: int = 16):
+    """Returns (svg_fragment, width, height) for the face+stats pane.
+
+    The portrait renders at its own (smaller) font size so a tall, high-detail
+    ASCII face stays roughly stats-height instead of dominating the pane.
+    """
     cw = char_width(font_size)
     line_h = font_size + 6
+    face_cw = char_width(face_font_size)
+    face_line_h = face_font_size + 4
 
     face_w_chars = max((len(l) for l in face_lines), default=0)
     label_col = label_column_width(stats_rows)
     stats_w_chars = _stats_line_width(stats_rows, label_col)
     gutter_chars = 4
 
-    face_px = face_w_chars * cw
+    face_px = face_w_chars * face_cw
     gutter_px = gutter_chars * cw
     stats_px = stats_w_chars * cw
 
+    face_h = len(face_lines) * face_line_h
+    stats_h = len(stats_rows) * line_h
+
     width = int(pad * 2 + face_px + gutter_px + stats_px)
-    height = int(pad * 2 + max(len(face_lines), len(stats_rows)) * line_h)
+    height = int(pad * 2 + max(face_h, stats_h))
 
     parts = []
 
     for i, line in enumerate(face_lines):
-        y = pad + (i + 1) * line_h - 4
+        y = pad + (i + 1) * face_line_h - 4
         parts.append(
-            f'<text x="{pad}" y="{y}" font-size="{font_size}" fill="{theme["accent"]}" '
+            f'<text x="{pad}" y="{y}" font-size="{face_font_size}" fill="{theme["accent"]}" '
             f'xml:space="preserve">{esc(line)}</text>'
         )
 

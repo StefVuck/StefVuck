@@ -17,23 +17,25 @@ import re
 import sys
 from datetime import date, datetime
 from pathlib import Path
-from urllib.request import Request, urlopen
 from urllib.error import URLError
+from urllib.request import Request, urlopen
 
 sys.path.insert(0, str(Path(__file__).parent))
-from ascii_face import build_ascii
 import svg_profile
 
 ROOT = Path(__file__).parent.parent
 README_PATH = ROOT / "README.md"
-FACE_SOURCE = ROOT / "assets" / "ascii_face_source.png"
+FACE_SOURCE = ROOT / "assets" / "ascii.txt"
 LEADERBOARD_JSON = ROOT / "stats" / "leaderboard_by_lines.json"
 LANGUAGE_COLORS_PATH = Path(__file__).parent / "language_colors.json"
 ASSETS_DIR = ROOT / "assets"
 USERNAME = "StefVuck"
 BIRTHDATE = "2003-06-12T00:00:00Z"
 
-TERMINAL_START, TERMINAL_END = "<!--TERMINAL-PROFILE:START-->", "<!--TERMINAL-PROFILE:END-->"
+TERMINAL_START, TERMINAL_END = (
+    "<!--TERMINAL-PROFILE:START-->",
+    "<!--TERMINAL-PROFILE:END-->",
+)
 
 # Fallback profile data used if the GitHub API call fails (e.g. rate limit),
 # so a flaky run doesn't wipe the banner. Update if these facts change.
@@ -49,18 +51,36 @@ FALLBACK_PROFILE = {
 # Hand-curated (not API-driven) since a couple of these aren't public repos
 # under this account. Keep in sync if that section changes.
 SELECTED_REPOS = [
-    {"name": "GUDForum", "tech": "Go · Gin · PostgreSQL · React · TS",
-     "desc": "Real-time drone society forum with secure auth"},
-    {"name": "CVinTUI", "tech": "Go · Bubbletea · Lipgloss · AWS",
-     "desc": "SSH-accessible terminal CV, cloud-hosted"},
-    {"name": "DYHTG2024T01", "tech": "React Native · DSP",
-     "desc": "Hackathon rhythm game with live beatmap generation"},
-    {"name": "Drone Swarm Sim", "tech": "Distributed Systems · Simulation",
-     "desc": "Distributed drone-swarm logic autonomously forming 2D/3D shapes"},
-    {"name": "UGRacing Telemetry", "tech": "Arduino · LTE-M · Terraform · C/C++",
-     "desc": "Sub-500ms racecar telemetry pipeline, live track-side diagnostics"},
-    {"name": "CAN Display", "tech": "C · CAN Protocol · LCD",
-     "desc": "Low-level CAN bus data visualization on LCD"},
+    {
+        "name": "GUDForum",
+        "tech": "Go · Gin · PostgreSQL · React · TS",
+        "desc": "Real-time drone society forum with secure auth",
+    },
+    {
+        "name": "CVinTUI",
+        "tech": "Go · Bubbletea · Lipgloss · AWS",
+        "desc": "SSH-accessible terminal CV, cloud-hosted",
+    },
+    {
+        "name": "DYHTG2024T01",
+        "tech": "React Native · DSP",
+        "desc": "Hackathon rhythm game with live beatmap generation",
+    },
+    {
+        "name": "Drone Swarm Sim",
+        "tech": "Distributed Systems · Simulation",
+        "desc": "Distributed drone-swarm logic autonomously forming 2D/3D shapes",
+    },
+    {
+        "name": "UGRacing Telemetry",
+        "tech": "Arduino · LTE-M · Terraform · C/C++",
+        "desc": "Sub-500ms racecar telemetry pipeline, live track-side diagnostics",
+    },
+    {
+        "name": "CAN Display",
+        "tech": "C · CAN Protocol · LCD",
+        "desc": "Low-level CAN bus data visualization on LCD",
+    },
 ]
 
 FALLBACK_LEADERBOARD = [
@@ -115,19 +135,12 @@ def fetch_star_total() -> int | None:
         headers["Authorization"] = f"Bearer {token}"
 
     total = 0
-    page = 1
     try:
-        while True:
-            url = f"https://api.github.com/users/{USERNAME}/repos?per_page=100&page={page}&type=owner"
-            req = Request(url, headers=headers)
-            with urlopen(req, timeout=10) as resp:
-                repos = json.load(resp)
-            if not repos:
-                break
-            total += sum(r.get("stargazers_count", 0) for r in repos)
-            if len(repos) < 100:
-                break
-            page += 1
+        url = f"https://api.github.com/users/StefVuck/repos?per_page=100&type=owner"
+        req = Request(url, headers=headers)
+        with urlopen(req, timeout=10) as resp:
+            repos = json.load(resp)
+        total += sum(r.get("stargazers_count", 0) for r in repos)
     except (URLError, TimeoutError, OSError) as exc:
         print(f"Warning: could not fetch star count ({exc})")
         return None
@@ -147,12 +160,26 @@ def format_uptime(created_at: str, today: date = None) -> str:
         prev_month = today.month - 1 or 12
         prev_year = today.year if today.month > 1 else today.year - 1
         import calendar
+
         days += calendar.monthrange(prev_year, prev_month)[1]
     if months < 0:
         years -= 1
         months += 12
 
     return f"{years} years, {months} months, {days} days"
+
+
+def load_face(path: Path) -> list[str]:
+    """Read the hand-authored ASCII portrait, trimming trailing whitespace,
+    the shared left margin, and blank edge lines so it sits flush in the pane.
+    """
+    lines = [l.rstrip() for l in path.read_text(encoding="utf-8").splitlines()]
+    while lines and not lines[0].strip():
+        lines.pop(0)
+    while lines and not lines[-1].strip():
+        lines.pop()
+    indent = min((len(l) - len(l.lstrip()) for l in lines if l.strip()), default=0)
+    return [l[indent:] for l in lines]
 
 
 def load_leaderboard_data() -> list[dict]:
@@ -166,8 +193,9 @@ def load_leaderboard_data() -> list[dict]:
     return FALLBACK_LEADERBOARD
 
 
-def build_stats_rows(profile: dict, top_language: str, language_count: int,
-                      star_total: int | None) -> list[dict]:
+def build_stats_rows(
+    profile: dict, top_language: str, language_count: int, star_total: int | None
+) -> list[dict]:
     uptime = format_uptime(BIRTHDATE)
     stars_display = str(star_total) if star_total is not None else "?"
 
@@ -175,17 +203,26 @@ def build_stats_rows(profile: dict, top_language: str, language_count: int,
         {"type": "header", "text": f"stefan@{USERNAME.lower()}"},
         {"type": "rule"},
         {"type": "kv", "label": "OS", "value": "macOS"},
-        {"type": "kv", "label": "Host", "value": "University of Glasgow"},
+        {"type": "kv", "label": "Host", "value": "Squarepoint Capital"},
         {"type": "kv", "label": "Uptime", "value": uptime},
-        {"type": "kv", "label": "Role", "value": "Software Dev @ Squarepoint Capital"},
+        {"type": "kv", "label": "Role", "value": "Software Dev"},
         {"type": "kv", "label": "IDE", "value": "Neovim"},
         {"type": "blank"},
         {"type": "section", "text": "Education"},
+        {"type": "kv", "label": "Uni", "value": "University of Glasgow"},
         {"type": "kv", "label": "Degree", "value": "MEng Electronics & Software Eng."},
         {"type": "kv", "label": "Honours", "value": "First Class"},
         {"type": "blank"},
-        {"type": "kv", "label": "Languages.Proficient", "value": "C++, Python, TypeScript"},
-        {"type": "kv", "label": "Languages.Learning", "value": "C++, Zig, Rust, Elixir"},
+        {
+            "type": "kv",
+            "label": "Languages.Proficient",
+            "value": "C++, C, Python, TypeScript",
+        },
+        {
+            "type": "kv",
+            "label": "Languages.Learning",
+            "value": "Zig, Rust, Elixir",
+        },
         {"type": "kv", "label": "Languages.Real", "value": "English, Serbian"},
         {"type": "blank"},
         {"type": "section", "text": "Contact"},
@@ -196,21 +233,39 @@ def build_stats_rows(profile: dict, top_language: str, language_count: int,
         {"type": "kv", "label": "GitHub", "value": f"@{USERNAME}"},
         {"type": "blank"},
         {"type": "section", "text": "GitHub Stats"},
-        {"type": "kv2", "pairs": [
-            ("Repos", str(profile.get("public_repos", "?"))),
-            ("Stars", stars_display),
-        ]},
-        {"type": "kv2", "pairs": [
-            ("Followers", str(profile.get("followers", "?"))),
-            ("Following", str(profile.get("following", "?"))),
-        ]},
-        {"type": "kv", "label": "Public Gists", "value": str(profile.get("public_gists", "?"))},
-        {"type": "kv", "label": "Languages Tracked", "value": f"{language_count} ({top_language} top)"},
+        {
+            "type": "kv2",
+            "pairs": [
+                ("Repos", str(profile.get("public_repos", "?"))),
+                ("Stars", stars_display),
+            ],
+        },
+        {
+            "type": "kv2",
+            "pairs": [
+                ("Followers", str(profile.get("followers", "?"))),
+                ("Following", str(profile.get("following", "?"))),
+            ],
+        },
+        {
+            "type": "kv",
+            "label": "Public Gists",
+            "value": str(profile.get("public_gists", "?")),
+        },
+        {
+            "type": "kv",
+            "label": "Languages Tracked",
+            "value": f"{language_count} ({top_language} top)",
+        },
     ]
 
 
-def replace_between(content: str, start_marker: str, end_marker: str, new_block: str) -> str:
-    pattern = re.compile(re.escape(start_marker) + r".*?" + re.escape(end_marker), re.DOTALL)
+def replace_between(
+    content: str, start_marker: str, end_marker: str, new_block: str
+) -> str:
+    pattern = re.compile(
+        re.escape(start_marker) + r".*?" + re.escape(end_marker), re.DOTALL
+    )
     replacement = f"{start_marker}\n{new_block}\n{end_marker}"
     if not pattern.search(content):
         raise ValueError(f"Markers {start_marker}/{end_marker} not found in README.md")
@@ -236,20 +291,31 @@ def main():
     top_language = leaderboard_data[0]["language"] if leaderboard_data else "N/A"
     language_count = len(leaderboard_data)
 
-    face_lines = build_ascii(str(FACE_SOURCE))
+    face_lines = load_face(FACE_SOURCE)
     stats_rows = build_stats_rows(profile, top_language, language_count, star_total)
 
     for theme in ("dark", "light"):
-        profile_svg = svg_profile.render(face_lines, stats_rows, leaderboard_data, USERNAME,
-                                          SELECTED_REPOS, theme_name=theme)
+        profile_svg = svg_profile.render(
+            face_lines,
+            stats_rows,
+            leaderboard_data,
+            USERNAME,
+            SELECTED_REPOS,
+            theme_name=theme,
+        )
         (ASSETS_DIR / f"profile_{theme}.svg").write_text(profile_svg, encoding="utf-8")
 
     readme = README_PATH.read_text(encoding="utf-8")
     readme = replace_between(
-        readme, TERMINAL_START, TERMINAL_END,
-        picture_tag("assets/profile_dark.svg", "assets/profile_light.svg",
-                    "Terminal window with an ASCII portrait, neofetch-style stats, "
-                    "language leaderboard, and selected repos for StefVuck")
+        readme,
+        TERMINAL_START,
+        TERMINAL_END,
+        picture_tag(
+            "assets/profile_dark.svg",
+            "assets/profile_light.svg",
+            "Terminal window with an ASCII portrait, neofetch-style stats, "
+            "language leaderboard, and selected repos for StefVuck",
+        ),
     )
 
     old = README_PATH.read_text(encoding="utf-8")
