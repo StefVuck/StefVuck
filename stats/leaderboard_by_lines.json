@@ -1,0 +1,117 @@
+[
+  {
+    "language": "TypeScript",
+    "value": 35600,
+    "color": "#2b7489"
+  },
+  {
+    "language": "Python",
+    "value": 18300,
+    "color": "#3572A5"
+  },
+  {
+    "language": "Swift",
+    "value": 13200,
+    "color": "#ffac45"
+  },
+  {
+    "language": "Lua",
+    "value": 4300,
+    "color": "#000080"
+  },
+  {
+    "language": "Elixir",
+    "value": 3600,
+    "color": "#6e4a7e"
+  },
+  {
+    "language": "Go",
+    "value": 3300,
+    "color": "#00ADD8"
+  },
+  {
+    "language": "CUDA",
+    "value": 2500,
+    "color": "#888888"
+  },
+  {
+    "language": "Nix",
+    "value": 2300,
+    "color": "#7e7eff"
+  },
+  {
+    "language": "C++",
+    "value": 1900,
+    "color": "#f34b7d"
+  },
+  {
+    "language": "Zig",
+    "value": 1500,
+    "color": "#ec915c"
+  },
+  {
+    "language": "Shell",
+    "value": 1500,
+    "color": "#89e051"
+  },
+  {
+    "language": "Haskell",
+    "value": 988,
+    "color": "#5e5086"
+  },
+  {
+    "language": "C",
+    "value": 683,
+    "color": "#555555"
+  },
+  {
+    "language": "Rust",
+    "value": 548,
+    "color": "#dea584"
+  },
+  {
+    "language": "COBOL",
+    "value": 367,
+    "color": "#555555"
+  },
+  {
+    "language": "Arduino",
+    "value": 299,
+    "color": "#bd79d1"
+  },
+  {
+    "language": "Assembly",
+    "value": 287,
+    "color": "#6E4C13"
+  },
+  {
+    "language": "PowerShell",
+    "value": 287,
+    "color": "#012456"
+  },
+  {
+    "language": "SQL",
+    "value": 275,
+    "color": "#e38c00"
+  },
+  {
+    "language": "Dockerfile",
+    "value": 171,
+    "color": "#384d54"
+  },
+  {
+    "language": "CMake",
+    "value": 81,
+    "color": "#DA3434"
+  },
+  {
+    "language": "Makefile",
+    "value": 45,
+    "color": "#427819"
+  },
+  {
+    "language": "Svelte",
+    "value": 31,
+    "color": "#ff3e00"
+  }
+]

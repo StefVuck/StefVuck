@@ -1,0 +1,48 @@
+name: Update Profile Banner
+
+on:
+  workflow_run:
+    workflows: ["Update Language Statistics"]
+    types: [completed]
+  schedule:
+    - cron: '30 0 * * *'  # 30 min after the language-stats run, daily
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-banner:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Pull latest before generating
+        run: git pull --rebase
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Render ASCII banner and leaderboard
+        run: python scripts/render_banner.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain README.md)" ]; then
+            git add README.md
+            git commit -m "Update ASCII banner and language leaderboard [skip ci]"
+            git push
+          else
+            echo "No changes to commit"
+          fi
