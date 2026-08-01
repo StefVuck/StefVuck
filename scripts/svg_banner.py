@@ -25,7 +25,7 @@ def label_column_width(rows: list[dict]) -> int:
 
 
 def body(face_lines: list[str], stats_rows: list[dict], theme: dict, font_size: int = 14,
-         face_font_size: int = 8, pad: int = 16):
+         face_font_size: int = 6, pad: int = 16):
     """Returns (svg_fragment, width, height) for the face+stats pane.
 
     The portrait renders at its own (smaller) font size so a tall, high-detail
