@@ -1,8 +1,8 @@
 $ lang-stats --by-lines StefVuck
-23 languages tracked  ·  102.0K lines total
+23 languages tracked  ·  104.1K lines total
 ----------------------------------------------
 TypeScript  ████████████████████████   39.6K
-Python      ███████████████████░░░░░   23.8K
+Python      ███████████████████░░░░░   25.9K
 Swift       ██████████████░░░░░░░░░░   13.2K
 Lua         ████████░░░░░░░░░░░░░░░░    4.3K
 Elixir      ███████░░░░░░░░░░░░░░░░░    3.6K

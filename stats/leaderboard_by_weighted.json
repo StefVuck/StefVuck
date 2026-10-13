@@ -1,117 +1,117 @@
 [
   {
     "language": "Python",
-    "value": 0.8009819017088624,
+    "value": 0.8271196708483732,
     "color": "#3572A5"
   },
   {
     "language": "TypeScript",
-    "value": 0.7391304347826086,
+    "value": 0.7291666666666666,
     "color": "#2b7489"
   },
   {
     "language": "Shell",
-    "value": 0.3247052484056581,
+    "value": 0.31202408898536826,
     "color": "#89e051"
   },
   {
     "language": "Swift",
-    "value": 0.2098083716805807,
+    "value": 0.20799677747768214,
     "color": "#ffac45"
   },
   {
     "language": "Go",
-    "value": 0.1720457072117701,
+    "value": 0.16661092460307445,
     "color": "#00ADD8"
   },
   {
     "language": "Lua",
-    "value": 0.11920936444719055,
+    "value": 0.11649197314284272,
     "color": "#000080"
   },
   {
     "language": "PowerShell",
-    "value": 0.11231783457035902,
+    "value": 0.10778884906311265,
     "color": "#012456"
   },
   {
     "language": "Dockerfile",
-    "value": 0.11085381659827633,
+    "value": 0.10632483109102996,
     "color": "#384d54"
   },
   {
     "language": "Nix",
-    "value": 0.0990538756418797,
+    "value": 0.09633648433753186,
     "color": "#7e7eff"
   },
   {
     "language": "Elixir",
-    "value": 0.08839584675441263,
+    "value": 0.08658425255151408,
     "color": "#6e4a7e"
   },
   {
     "language": "SQL",
-    "value": 0.06868812356575076,
+    "value": 0.06597073226140293,
     "color": "#e38c00"
   },
   {
     "language": "Cuda",
-    "value": 0.05277378727401829,
+    "value": 0.05186799017256902,
     "color": "#888888"
   },
   {
     "language": "COBOL",
-    "value": 0.048110110832964764,
+    "value": 0.04629851663006621,
     "color": "#555555"
   },
   {
     "language": "Arduino",
-    "value": 0.04725189340105422,
+    "value": 0.04544029919815567,
     "color": "#bd79d1"
   },
   {
     "language": "C++",
-    "value": 0.04627405231175462,
+    "value": 0.04536825521030534,
     "color": "#f34b7d"
   },
   {
     "language": "CMake",
-    "value": 0.044500549281105715,
+    "value": 0.042688955078207164,
     "color": "#DA3434"
   },
   {
     "language": "Makefile",
-    "value": 0.044046198875976605,
+    "value": 0.042234604673078054,
     "color": "#427819"
   },
   {
     "language": "Zig",
-    "value": 0.0408344682947922,
+    "value": 0.039928671193342924,
     "color": "#ec915c"
   },
   {
     "language": "Haskell",
-    "value": 0.034208524886659326,
+    "value": 0.033302727785210054,
     "color": "#5e5086"
   },
   {
     "language": "C",
-    "value": 0.0303591672876488,
+    "value": 0.029453370186199528,
     "color": "#555555"
   },
   {
     "language": "Rust",
-    "value": 0.028655353268414636,
+    "value": 0.02774955616696536,
     "color": "#dea584"
   },
   {
     "language": "Assembly",
-    "value": 0.02536131283122858,
+    "value": 0.024455515729779304,
     "color": "#6E4C13"
   },
   {
     "language": "Svelte",
-    "value": 0.02213037661697712,
+    "value": 0.021224579515527843,
     "color": "#ff3e00"
   }
 ]
