@@ -6,7 +6,7 @@
   },
   {
     "language": "Python",
-    "value": 25919,
+    "value": 26262,
     "color": "#3572A5"
   },
   {
@@ -25,6 +25,11 @@
     "color": "#6e4a7e"
   },
   {
+    "language": "C++",
+    "value": 3454,
+    "color": "#f34b7d"
+  },
+  {
     "language": "Go",
     "value": 3297,
     "color": "#00ADD8"
@@ -40,13 +45,8 @@
     "color": "#888888"
   },
   {
-    "language": "C++",
-    "value": 1944,
-    "color": "#f34b7d"
-  },
-  {
     "language": "Shell",
-    "value": 1613,
+    "value": 1622,
     "color": "#89e051"
   },
   {
@@ -101,12 +101,12 @@
   },
   {
     "language": "CMake",
-    "value": 81,
+    "value": 105,
     "color": "#DA3434"
   },
   {
     "language": "Makefile",
-    "value": 45,
+    "value": 66,
     "color": "#427819"
   },
   {
